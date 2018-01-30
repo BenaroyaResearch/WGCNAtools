@@ -1,0 +1,12 @@
+Package: WGCNAtools
+Title: Simplify use of WGCNA
+Version: 0.0.0.9001
+Authors@R: person("Matthew", "Dufort", email = "matt.dufort@gmail.com", role = c("aut", "cre"))
+Description: This package contains functions to streamline a number of workflows
+    in WGCNA.
+Imports: WGCNA, stringr
+Depends:
+    R (>= 3.2.2)
+License: GPL-3
+LazyData: true
+RoxygenNote: 6.0.1
