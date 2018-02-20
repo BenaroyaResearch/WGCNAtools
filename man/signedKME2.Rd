@@ -15,7 +15,7 @@
 A data frame, as returned by \code{signedKME}, with any "_" in the gene names of \code{datExpr} retained as "_" in the result.
 }
 \description{
-This is a wrapper for signedKME, with the additional step of converting "." in the gene names of the result
-back to "_". signedKME converts these "_" to ".", and this causes name mismatches downstream.
-All such genes are assigned to a new module, which can be named by the user.
+This is a wrapper for signedKME, with the additional step of reverting the gene names in the
+result to the input gene names. signedKME converts all special characters in the gene names to
+".", and this causes name mismatches downstream.
 }

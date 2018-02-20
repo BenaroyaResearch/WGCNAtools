@@ -4,7 +4,7 @@
 \alias{thresholdWGCNAmodules}
 \title{Remove genes from modules if connectivity is below a specified threshold}
 \usage{
-\code{thresholdWGCNAmodules(gene_modulesthreshold=0.25, color.no_mod="white",
+\code{thresholdWGCNAmodules(gene_modules, threshold=0.25, color.no_mod="white",
   color_col="color_assigned", kME_col="kME_color_assigned")}
 }
 \arguments{

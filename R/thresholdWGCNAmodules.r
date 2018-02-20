@@ -9,12 +9,14 @@
 #' @param kME_col Optional, the name or number of the column in \code{gene_modules} which contains the connectivity values.
 #' @export
 #' @return A new data frame with the same dimension and names as \code{gene_modules}, with 0 or more genes assigned to the new module.
-#' @usage \code{thresholdWGCNAmodules(gene_modulesthreshold=0.25, color.no_mod="white",
+#' @usage \code{thresholdWGCNAmodules(gene_modules, threshold=0.25, color.no_mod="white",
 #'   color_col="color_assigned", kME_col="kME_color_assigned")}
-thresholdWGCNAmodules <- function(gene_modules, threshold=0.25, color.no_mod="white", 
-                                  color_col="color_assigned", kME_col="kME_color_assigned") {
-  gene_modules[gene_modules[,kME_col] < threshold, color_col] <- color.no_mod
-  gene_modules[gene_modules[,color_col]==color.no_mod, kME_col] <- NA
-  cat(sum(gene_modules[,color_col]==color.no_mod), " genes set to no module.\n", sep="")
-  return(gene_modules)
-}
+thresholdWGCNAmodules <-
+  function(
+    gene_modules, threshold=0.25, color.no_mod="white", 
+    color_col="color_assigned", kME_col="kME_color_assigned") {
+    gene_modules[gene_modules[,kME_col] < threshold, color_col] <- color.no_mod
+    gene_modules[gene_modules[,color_col]==color.no_mod, kME_col] <- NA
+    cat(sum(gene_modules[,color_col]==color.no_mod), " genes set to no module.\n", sep="")
+    return(gene_modules)
+  }

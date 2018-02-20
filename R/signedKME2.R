@@ -1,8 +1,8 @@
 #' Calculation of (signed) eigengene-based connectivity, without perturbing gene names.
 #'
-#' This is a wrapper for signedKME, with the additional step of converting "." in the gene names of the result
-#' back to "_". signedKME converts these "_" to ".", and this causes name mismatches downstream.
-#' All such genes are assigned to a new module, which can be named by the user.
+#' This is a wrapper for signedKME, with the additional step of reverting the gene names in the
+#' result to the input gene names. signedKME converts all special characters in the gene names to
+#' ".", and this causes name mismatches downstream.
 #' @param datExpr a data frame containing the gene expression data. Passed to signedKME.
 #' @param dateME a data frame containing module eigengenes. Passed to signedKME.
 #' @export
@@ -10,6 +10,6 @@
 #' @usage \code{signedKME2(datExpr, datME, ...)}
 signedKME2 <- function(datExpr, datME, ...) {
   result <- WGCNA::signedKME(datExpr, datME, ...)
-  rownames(result) <- stringr::str_replace_all(rownames(result), "\\.", "-")
+  rownames(result) <- colnames(datExpr)
   return(result)
 }
