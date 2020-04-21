@@ -4,7 +4,7 @@
 \alias{plot_softpowers}
 \title{Calculate and plot soft thresholding power diagnostics}
 \usage{
-\code{pickSoftThrehold(counts, powers = c(c(1:10), seq(from = 12, to=20, by=2)), verbose=5))}
+\code{plot_softpowers(counts, powers = c(c(1:10), seq(from = 12, to=20, by=2)), verbose=5))}
 }
 \arguments{
 \item{counts}{A matrix or data frame of counts, with genes in columns and samples in rows}
