@@ -3,3 +3,5 @@
 export(plot_softpowers)
 export(signedKME2)
 export(thresholdWGCNAmodules)
+importFrom(graphics,abline)
+importFrom(graphics,text)

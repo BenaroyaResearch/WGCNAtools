@@ -4,14 +4,17 @@
 \alias{plot_softpowers}
 \title{Calculate and plot soft thresholding power diagnostics}
 \usage{
-\code{plot_softpowers(counts, powers = c(c(1:10), seq(from = 12, to=20, by=2)), verbose=5))}
+plot_softpowers(counts, powers = c(1:10, seq(from = 12, to = 20, by = 2)), 
+  networkType = "unsigned", verbose = 5)
 }
 \arguments{
 \item{counts}{A matrix or data frame of counts, with genes in columns and samples in rows}
 
-\item{powers}{A vector of soft thresholding powers; passed to \code{pickSoftThreshold}}
+\item{powers}{A vector of soft thresholding powers; passed to \code{WGCNA::pickSoftThreshold}}
 
-\item{verbose}{Integer level of verbosity; passed to \code{pickSoftThreshold}}
+\item{networkType}{Character value, the network type, passed to \code{WGCNA::pickSoftThreshold}. Allowed values are (unique abbreviations of) "unsigned", "signed", "signed hybrid". See \code{WGCNA::adjacency}}
+
+\item{verbose}{Integer level of verbosity; passed to \code{WGCNA::pickSoftThreshold}}
 }
 \description{
 Calculate and plot diagnostics for a range of values of the soft thresholding power, as described

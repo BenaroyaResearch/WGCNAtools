@@ -4,12 +4,14 @@
 \alias{signedKME2}
 \title{Calculation of (signed) eigengene-based connectivity, without perturbing gene names.}
 \usage{
-\code{signedKME2(datExpr, datME, ...)}
+signedKME2(datExpr, datME, ...)
 }
 \arguments{
-\item{datExpr}{a data frame containing the gene expression data. Passed to signedKME.}
+\item{datExpr}{a data frame containing the gene expression data, passed to signedKME}
 
-\item{dateME}{a data frame containing module eigengenes. Passed to signedKME.}
+\item{datME}{a data frame containing module eigengenes, passed to signedKME}
+
+\item{...}{additional optional arguments to be passed to signedKME}
 }
 \value{
 A data frame, as returned by \code{signedKME}, with any "_" in the gene names of \code{datExpr} retained as "_" in the result.
